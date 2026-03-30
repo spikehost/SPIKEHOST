@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPIKEHOST | تفاصيل المشروع</title>
+    <style>
+        /* --- الأساسيات --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 30px;
+            padding: 40px;
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-area {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-area h2 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
+        .header-area p { color: #bdc3c7; font-size: 0.95rem; }
+
+        /* --- تنسيق الحقول --- */
+        .input-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #e94560;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            padding: 15px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        textarea { height: 150px; resize: none; line-height: 1.6; }
+
+        input:focus, textarea:focus {
+            border-color: #e94560;
+            background: rgba(233, 69, 96, 0.05);
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.2);
+        }
+
+        /* --- زر الإرسال --- */
+        .submit-btn {
+            background: linear-gradient(45deg, #e94560, #ff2e51);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 1.2rem;
+            font-weight: 900;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            margin-top: 10px;
+            box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(233, 69, 96, 0.5);
+            filter: brightness(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="glass-panel">
+        <div class="header-area">
+            <h2>تخصيص طلبك 📝</h2>
+            <p>أدخل بياناتك لنتواصل معك بخصوص مشروعك</p>
+        </div>
+
+        <form id="projectForm">
+            <div class="input-group">
+                <label>البريد الإلكتروني (للتواصل)</label>
+                <input type="email" id="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="input-group">
+                <label>اسم المشروع</label>
+                <input type="text" id="projectName" placeholder="مثلاً: متجر SPIKE الذكي">
+            </div>
+
+            <div class="input-group">
+                <label>وصف الموقع بالتفصيل</label>
+                <textarea id="desc" placeholder="اشرح لنا فكرتك، الألوان، والمميزات المطلوبة..."></textarea>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="validateAndGo()">
+                إرسال الطلب وانهاء العملية
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function validateAndGo() {
+            const email = document.getElementById('email').value;
+            const desc = document.getElementById('desc').value;
+            
+            // تحقق بسيط من الإيميل والوصف
+            if(!email.includes('@') || email.length < 5) {
+                alert("يرجى إدخال بريد إلكتروني صحيح.");
+            } else if(desc.trim() === "") {
+                alert("يرجى كتابة وصف لمشروعك.");
+            } else {
+                // الانتقال لصفحة التهنئة
+                location.href = 'pay.html';
+            }
+        }
+    </script>
+
+</body>
+</html>
