@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPIKEHOST | امتلك موقعك للأبد</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 5%;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #bdc3c7;
+            margin-bottom: 50px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .option-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .option-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 20px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .option-card:hover {
+            background: #e94560;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.4);
+            border-color: transparent;
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .option-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        /* تنسيق السعر الدائم */
+        .price-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            margin: 15px 0;
+            border-radius: 15px;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            border: 2px solid rgba(233, 69, 96, 0.5);
+            transition: 0.3s;
+        }
+
+        .option-card:hover .price-tag {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+        }
+
+        .price-tag .forever {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #febd01; /* لون ذهبي لتمييز كلمة دائمي */
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .option-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #febd01;
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>امتلك مشروعك للأبد</h1>
+    <p class="subtitle">ادفع مرة واحدة في SPIKEHOST واستمتع بملكية كاملة مدى الحياة</p>
+
+    <div class="options-grid">
+        
+        <a href="endsite.html" class="option-link">
+            <div class="option-card">
+                <div class="popular-badge">الأكثر طلباً</div>
+                <span class="icon">🛍️</span>
+                <h3>متجر إلكتروني</h3>
+                <div class="price-tag">
+                    $299
+                    <span class="forever">دفع دائمي لمرة واحدة</span>
+                </div>
+                <p>سوق لمنتجاتك بلا حدود، متجر متكامل ملكك للأبد.</p>
+            </div>
+        </a>
+
+        <a href="endsite.html" class="option-link">
+            <div class="option-card">
+                <span class="icon">🎮</span>
+                <h3>لعبة 2D</h3>
+                <div class="price-tag">
+                    $450
+                    <span class="forever">دفع دائمي لمرة واحدة</span>
+                </div>
+                <p>تطوير اللعبة بالكامل مع تسليم الأكواد والمصادر.</p>
+            </div>
+        </a>
+
+        <a href="endsite.html" class="option-link">
+            <div class="option-card">
+                <span class="icon">🌐</span>
+                <h3>تواصل اجتماعي</h3>
+                <div class="price-tag">
+                    $599
+                    <span class="forever">دفع دائمي لمرة واحدة</span>
+                </div>
+                <p>منصتك الخاصة، بياناتك محمية، وملكية كاملة للنظام.</p>
+            </div>
+        </a>
+
+        <a href="endsite.html" class="option-link">
+            <div class="option-card">
+                <span class="icon">🏢</span>
+                <h3>موقع تعريفي</h3>
+                <div class="price-tag">
+                    $150
+                    <span class="forever">دفع دائمي لمرة واحدة</span>
+                </div>
+                <p>هوية رقمية ثابتة وقوية لشركتك دون رسوم تجديد.</p>
+            </div>
+        </a>
+
+        <a href="endsite.html" class="option-link">
+            <div class="option-card">
+                <span class="icon">🎓</span>
+                <h3>منصة تعليمية</h3>
+                <div class="price-tag">
+                    $350
+                    <span class="forever">دفع دائمي لمرة واحدة</span>
+                </div>
+                <p>أكاديميتك الخاصة لتدريس طلابك مدى الحياة.</p>
+            </div>
+        </a>
+
+        <a href="endsite.html" class="option-link">
+            <div class="option-card">
+                <span class="icon">✍️</span>
+                <h3>مدونة شخصية</h3>
+                <div class="price-tag">
+                    $99
+                    <span class="forever">دفع دائمي لمرة واحدة</span>
+                </div>
+                <p>اكتب وانشر إبداعك في مساحتك الخاصة للأبد.</p>
+            </div>
+        </a>
+
+    </div>
+
+</body>
+</html>
