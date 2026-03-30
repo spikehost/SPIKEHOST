@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPIKEHOST | تهانينا!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #1a1a2e;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+        }
+
+        /* حاوية التهنئة */
+        .celebration-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border-radius: 30px;
+            border: 2px solid #e94560;
+            position: relative;
+            z-index: 2;
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-width: 500px;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .icon-check {
+            font-size: 5rem;
+            color: #00ff88;
+            margin-bottom: 20px;
+            display: block;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #bdc3c7;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        /* الزر المشع (Glowing Button) */
+        .glow-btn {
+            display: inline-block;
+            padding: 18px 60px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            background: #e94560;
+            border-radius: 50px;
+            position: relative;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.6);
+            animation: glowing 2s infinite;
+        }
+
+        @keyframes glowing {
+            0% { box-shadow: 0 0 5px #e94560; }
+            50% { box-shadow: 0 0 30px #e94560, 0 0 50px #ff004c; }
+            100% { box-shadow: 0 0 5px #e94560; }
+        }
+
+        .glow-btn:hover {
+            transform: scale(1.1);
+            background: #ff2e51;
+        }
+
+        /* زينة خلفية (Confetti خفيفة) */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #e94560;
+            top: -10px;
+            z-index: 1;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="confetti-container"></div>
+
+    <div class="celebration-card">
+        <span class="icon-check">✔</span>
+        <h1>تهانينا!</h1>
+        <p>لقد وصل طلبك بنجاح إلى فريق <strong>SPIKEHOST</strong>.<br> نحن الآن نقوم بمراجعة وصفك السحري لنبدأ العمل!</p>
+        
+        <a href="index.html" class="glow-btn">مبروك! العودة للرئيسية</a>
+    </div>
+
+    <script>
+        // كود بسيط لصنع زينة (Confetti) تتساقط
+        const container = document.getElementById('confetti-container');
+        const colors = ['#e94560', '#00ff88', '#febd01', '#ffffff'];
+
+        for (let i = 0; i < 50; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            confetti.style.opacity = Math.random();
+            container.appendChild(confetti);
+        }
+    </script>
+
+</body>
+</html>
